@@ -1,0 +1,21 @@
+.total {
+	position: relative;
+	top: 10vw;
+	width: 70vw;
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	margin-top: 1rem;
+}
+.image {
+	position: absolute;
+	height: 25vh;
+	width: 25vw;
+	top: 0;
+	background-color: #d0d0d0;
+}
+.popup {
+	font-size: 1rem;
+	position: relative;
+	top: 12vw;
+	text-align: justify;
+}

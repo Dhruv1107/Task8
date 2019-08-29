@@ -1,0 +1,37 @@
+.header {
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  background: #273852;
+  height: 15vh;
+  width: 100vw;
+}
+.loginBtn {
+  position: relative;
+  left: 75vw;
+  top: 3vh;
+  z-index: 1;
+  /* color: white; */
+}
+.header__heading {
+  color: white;
+  position: relative;
+  left: 45vw;
+  bottom: 5vh;
+  animation: moveInRight 1s ease-out;
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

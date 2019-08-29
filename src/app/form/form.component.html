@@ -1,0 +1,29 @@
+<div class="main">
+  <div>
+    <select
+      id="sel-category"
+      class="form__select-box"
+      (change)="changeHeading($event)"
+    >
+      <option *ngFor="let channel of channels" value="{{ channel }}">{{
+        channel
+      }}</option>
+    </select>
+
+    <input
+      type="text"
+      placeholder="Type your Text..."
+      class="filterTextbox"
+      [(ngModel)]="filteredStatus"
+    />
+    <button class="filterBtn" (click)="filterData()">Filter</button>
+    <button
+      class="addBtn"
+      *ngIf="authenticateService.isAdmin"
+      routerLink="/addform"
+    >
+      Add Article
+    </button>
+    <hr />
+  </div>
+</div>

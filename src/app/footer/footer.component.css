@@ -1,0 +1,17 @@
+.footer {
+  position: fixed;
+  background: #273852;
+  height: 7vh;
+  width: 100%;
+  bottom: 0;
+}
+.footerName {
+  display: inline-block;
+  color: white;
+}
+.foot {
+  margin-left: 3em;
+}
+.powered {
+  margin-left: 70em;
+}
