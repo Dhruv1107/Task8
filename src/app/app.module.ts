@@ -17,6 +17,7 @@ import { FilterContentPipe } from "./filterContent.pipe";
 import { AuthComponent } from "./auth/auth.component";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyC5H4PIooJCw2b67hnTSuIxtVnMBCkpQ-8",
@@ -38,7 +39,8 @@ var firebaseConfig = {
     UnlessDirective,
     PopupComponent,
     FilterContentPipe,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
