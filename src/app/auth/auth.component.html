@@ -1,6 +1,6 @@
 <div class="form">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <form>
+    <form #authForm="ngForm">
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -19,6 +19,7 @@
           class="form-control"
           #userPassword
           required
+          minlength="6"
         />
       </div>
       <div>
@@ -28,6 +29,7 @@
             authenticateService.login(userEmail.value, userPassword.value)
           "
           type="submit"
+          [disabled]="!authForm.valid"
         >
           Login
         </button>
