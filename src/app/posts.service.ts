@@ -14,7 +14,6 @@ export class PostsService {
   filteredData: Posts[];
   post: Posts;
   allData: Posts[];
-  // public eventClicked = new Subject<Event>();
   public popUpData = new Subject<Posts[]>();
   constructor(private router: Router, private http: HttpClient) {}
 

@@ -2,7 +2,7 @@
   <div
     class="content"
     id="content"
-    *ngFor="let post of posts | filter: filteredStatus:'content'"
+    *ngFor="let post of posts | filterContent: filteredStatus:'content'"
   >
     <div class="content__sub" id="content__display">
       <img class="content__img" src="{{ post.image }}" />

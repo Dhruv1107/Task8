@@ -15,6 +15,6 @@ export class AppComponent {
   headerChanged(event: Event): void {
     this.name = (<HTMLInputElement>event.currentTarget).value;
     this.postsService.getSelectedPost(this.name);
-    this.router.navigate(["/", this.name]);
+    this.router.navigate(["/news", this.name]);
   }
 }

@@ -7,7 +7,8 @@ export const POSTSDATA: Posts[] = [
     heading: "BBC",
     date: "Posted on 29 June, 2019 //Category: Category One",
     content: `Iranian boats tried to impede a British oil tanker near the Gulf - before being driven off by a Royal Navy ship, a UK government spokesman has said. HMS Montrose positioned itself between the three boats and the tanker British Heritage before issuing verbal warnings to the Iranian vessels.`,
-    popup: `A UK Government spokesman said: "Contrary to international law, three Iranian vessels attempted to impede the passage of a commercial vessel, British Heritage, through the Strait of Hormuz. "We are concerned by this action and continue to urge the Iranian authorities to de-escalate the situation in the region."`
+    popup: `A UK Government spokesman said: "Contrary to international law, three Iranian vessels attempted to impede the passage of a commercial vessel, British Heritage, through the Strait of Hormuz. "We are concerned by this action and continue to urge the Iranian authorities to de-escalate the situation in the region."`,
+    comments: []
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ export const POSTSDATA: Posts[] = [
     content:
       "Nine dead after small plane carrying parachutists crashes in Sweden",
     popup:
-      "HELSINKI — Swedish officials said a small plane carrying parachutists crashed in northern Sweden soon after takeoff on Sunday and all nine people on board were killed. The accident took place a little after 2 p.m. local time on Storsandskar island. Swedish media quoted witnesses reporting that some of the parachutists were seen trying to jump off the plane just before the crash."
+      "HELSINKI — Swedish officials said a small plane carrying parachutists crashed in northern Sweden soon after takeoff on Sunday and all nine people on board were killed. The accident took place a little after 2 p.m. local time on Storsandskar island. Swedish media quoted witnesses reporting that some of the parachutists were seen trying to jump off the plane just before the crash.",
+    comments: []
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ export const POSTSDATA: Posts[] = [
     content:
       "Hrithik Roshan's Super 30 full movie leaked by Tamilrockers, made available for free download",
     popup:
-      "Hrithik Roshan's Super 30, which is based on the life of mathematician Anand Kumar, has been leaked online by piracy website Tamilrockers. The film was released on July 12 and has been doing a good business at the box office. Severe actions have been taken against the website, which is notorious to leak every latest release, but it continues to affect the business of films by leaking them online. Its latest piracy victims include Kabir Singh, Article 15, Oh Baby and Spider-Man Far From Home"
+      "Hrithik Roshan's Super 30, which is based on the life of mathematician Anand Kumar, has been leaked online by piracy website Tamilrockers. The film was released on July 12 and has been doing a good business at the box office. Severe actions have been taken against the website, which is notorious to leak every latest release, but it continues to affect the business of films by leaking them online. Its latest piracy victims include Kabir Singh, Article 15, Oh Baby and Spider-Man Far From Home",
+    comments: []
   }
 ];

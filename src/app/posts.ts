@@ -5,4 +5,5 @@ export class Posts {
   date: string;
   content: string;
   popup: string;
+  comments: string[];
 }

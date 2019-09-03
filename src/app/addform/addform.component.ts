@@ -2,13 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { PostsService } from "../posts.service";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { appConfig } from "../config/app.config";
 @Component({
   selector: "app-addform",
   templateUrl: "./addform.component.html",
   styleUrls: ["./addform.component.css"]
 })
 export class AddformComponent implements OnInit {
-  fields: string[] = ["heading", "date", "image", "content", "popup"];
+  fields: string[] = appConfig.fields;
   constructor(public postsService: PostsService, private router: Router) {}
 
   ngOnInit() {}
@@ -27,8 +28,8 @@ export class AddformComponent implements OnInit {
   onSubmit(): void {
     this.postsService.addPost(this.profileForm.value);
     this.postsService.createPost().subscribe(data => {
-      console.log(data);
-      this.router.navigate(["/"]);
+      alert("New Article added");
+      this.router.navigate(["/news/ALL"]);
     });
   }
 }
