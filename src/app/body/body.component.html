@@ -15,8 +15,9 @@
       <p class="content__modifier content__matter">
         {{ post.content }}
       </p>
-      <button class="btn" id="myBtn" [routerLink]="['/popup/', post.id]">
+      <button class="btn" id="myBtn" (click)="continueReading(post.id)">
         Continue Reading
+
       </button>
     </div>
   </div>

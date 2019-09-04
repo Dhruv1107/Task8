@@ -4,6 +4,6 @@
   class="commentSubmit"
   (click)="addComment(comments.value)"
 />
-<!-- <div *ngFor="let comment of comments">
-  {{ comment }}
-</div> -->
+<div class="displayComments" *ngFor="let cmnt of cmnts">
+  {{ cmnt }}
+</div>

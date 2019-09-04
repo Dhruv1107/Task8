@@ -7,14 +7,17 @@ import { PostsService } from "src/app/posts.service";
   styleUrls: ["./comments.component.css"]
 })
 export class CommentsComponent implements OnInit {
-  comments: string[] = [];
+  // cmnts = this.postsService.allData[this.postsService.postId-1].comments;
   constructor(public postsService: PostsService) {}
-
-  ngOnInit() {}
+  ngOnInit() {
+  
+  }
 
   addComment(comment: string) {
-    console.log(comment);
-    this.comments.push(comment);
-    console.log(this.comments);
+  //  this.postsService.allData[this.postsService.postId-1].comments.push(comment);
+  //  console.log(this.postsService.allData);
+  this.postsService.addComment(comment).subscribe(data => {
+    console.log(data);
+  });
   }
 }

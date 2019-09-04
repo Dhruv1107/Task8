@@ -12,9 +12,10 @@ import { AuthService } from "../auth.service";
 })
 export class BodyComponent implements OnInit {
   posts: Posts[] = [];
-  allData: Posts[] = [];
+  allData = [];
   filteredStatus: string = "";
   constructor(
+    private router:Router,
     private postsService: PostsService,
     private route: ActivatedRoute,
     private authService: AuthService
@@ -39,7 +40,7 @@ export class BodyComponent implements OnInit {
 
     this.postsService.getPosts().subscribe(posts => {
       Object.keys(posts).forEach(key => {
-        this.allData.push(posts[key]);
+        this.allData.push({...posts[key],comments:[]});
       });
       this.posts = this.allData;
       this.postsService.setAllData(this.allData);
@@ -55,5 +56,9 @@ export class BodyComponent implements OnInit {
 
   getSourceDisplay(name: string): void {
     this.posts = this.allData.filter(post => post.heading === name);
+  }
+  continueReading(id:number):void{
+    this.postsService.setId(id);
+    this.router.navigate(['/popup',id]);
   }
 }
