@@ -7,17 +7,26 @@ import { PostsService } from "src/app/posts.service";
   styleUrls: ["./comments.component.css"]
 })
 export class CommentsComponent implements OnInit {
-  // cmnts = this.postsService.allData[this.postsService.postId-1].comments;
-  constructor(public postsService: PostsService) {}
-  ngOnInit() {
   
+  cmnts:string[];
+  constructor(public postsService: PostsService) {
+     this.cmnts = this.postsService.getComments();
   }
+  ngOnInit() {}
 
   addComment(comment: string) {
-  //  this.postsService.allData[this.postsService.postId-1].comments.push(comment);
-  //  console.log(this.postsService.allData);
   this.postsService.addComment(comment).subscribe(data => {
-    console.log(data);
+    this.cmnts = [];
+    this.postsService.getPosts().subscribe(totalData => {
+      Object.keys(totalData).forEach((key) => {
+        if(totalData[key].id == this.postsService.postId) {
+          Object.keys(totalData[key].comments).forEach((commentKey) => {
+             this.cmnts.push(totalData[key].comments[commentKey].comment);
+          })
+        }
+      })
+    })
   });
+  
   }
 }

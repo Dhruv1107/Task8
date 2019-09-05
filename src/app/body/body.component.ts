@@ -13,6 +13,7 @@ import { AuthService } from "../auth.service";
 export class BodyComponent implements OnInit {
   posts: Posts[] = [];
   allData = [];
+  fullData = [];
   filteredStatus: string = "";
   constructor(
     private router:Router,
@@ -39,8 +40,10 @@ export class BodyComponent implements OnInit {
       });
 
     this.postsService.getPosts().subscribe(posts => {
+      // console.log(posts);
+      this.postsService.fullData = posts;
       Object.keys(posts).forEach(key => {
-        this.allData.push({...posts[key],comments:[]});
+        this.allData.push(posts[key]);
       });
       this.posts = this.allData;
       this.postsService.setAllData(this.allData);
