@@ -19,9 +19,10 @@ export class CommentsComponent implements OnInit {
     this.cmnts = [];
     this.postsService.getPosts().subscribe(totalData => {
       Object.keys(totalData).forEach((key) => {
-        if(totalData[key].id == this.postsService.postId) {
-          Object.keys(totalData[key].comments).forEach((commentKey) => {
-             this.cmnts.push(totalData[key].comments[commentKey].comment);
+        let newsArticle = totalData[key];
+        if(newsArticle.id === this.postsService.postId) {
+          Object.keys(newsArticle.comments).forEach((commentKey) => {
+             this.cmnts.push(newsArticle.comments[commentKey].comment);
           })
         }
       })

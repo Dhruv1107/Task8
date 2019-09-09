@@ -1,12 +1,9 @@
 import { Injectable } from "@angular/core";
 
 import { Posts } from "./posts";
-import { POSTSDATA } from "./posts-data";
 import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { Subject, Observable } from "rxjs";
-import { database } from 'firebase';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
@@ -18,50 +15,59 @@ export class PostsService {
   postId: number;
   allData: Posts[];
   fullData: [];
-  commentSubject=new Subject<Object>();
+  commentSubject = new Subject<Object>();
   public popUpData = new Subject<Posts[]>();
   constructor(private router: Router, private http: HttpClient) {}
 
-  getSelectedPost(name: string): Posts[] {
-    return POSTSDATA.filter(post => post.heading === name);
-  }
   addPost(addPost: Posts): void {
     this.post = addPost;
   }
+  
   setAllData(allData: Posts[]) {
     this.allData = allData;
     this.commentSubject.next(this.fullData);
   }
+
   createPost(): Observable<any> {
     return this.http.post(
       "https://newsfeed-6ee3e.firebaseio.com/posts.json",
       this.post
     );
   }
+
   getPosts(): Observable<any> {
     return this.http.get("https://newsfeed-6ee3e.firebaseio.com/posts.json");
   }
-  setId(id:number):void {
-    this.postId=id;
+
+  setId(id: number): void {
+    this.postId = id;
   }
-  addComment(comment) {
-    let postKey:string;
+
+  addComment(comment: string) {
+    let postKey: string;
     Object.keys(this.fullData).forEach(key => {
-      if(this.fullData[key].id == this.postId)
-      postKey = key;
+      if (this.fullData[key].id == this.postId){ 
+        postKey = key;
+      }
     });
-    return this.http.post(`https://newsfeed-6ee3e.firebaseio.com/posts/${postKey}/comments.json`,{comment});
+    return this.http.post(
+      `https://newsfeed-6ee3e.firebaseio.com/posts/${postKey}/comments.json`,
+      { comment }
+    );
   }
-  getComments():string[]{
-    let cmnts1=[];
-    let cmnts2=[];
-    let cmnts = this.allData[this.postId-1].comments;
-    Object.keys(cmnts).forEach(key => {
-      cmnts1.push(cmnts[key]);
-    })
-    for(let i = 0;i<cmnts1.length;i++){
-      cmnts2.push(cmnts1[i].comment);
-    }
-    return cmnts2;
+
+  getComments(): string[] {
+    let commentsArray = [];
+    this.getPosts().subscribe(totalData => {
+      Object.keys(totalData).forEach(key => {
+        if (totalData[key].id == this.postId) {
+          Object.keys(totalData[key].comments).forEach(commentKey => {
+            commentsArray.push(totalData[key].comments[commentKey].comment);
+          });
+        }
+      });
+    });
+    return commentsArray;
   }
+
 }

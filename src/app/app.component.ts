@@ -14,7 +14,6 @@ export class AppComponent {
   constructor(private postsService: PostsService, private router: Router) {}
   headerChanged(event: Event): void {
     this.name = (<HTMLInputElement>event.currentTarget).value;
-    this.postsService.getSelectedPost(this.name);
     this.router.navigate(["/news", this.name]);
   }
 }
