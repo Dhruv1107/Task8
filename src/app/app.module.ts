@@ -17,7 +17,6 @@ import { FilterContentPipe } from "./filterContent.pipe";
 import { AuthComponent } from "./auth/auth.component";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
-import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinner.component";
 import { AuthGuard } from "./auth-guard.service";
 import { CommentsComponent } from "./popup/comments/comments.component";
 import { fireBaseConfig } from "./config/app.config";
@@ -35,7 +34,6 @@ var firebaseConfig = fireBaseConfig;
     PopupComponent,
     FilterContentPipe,
     AuthComponent,
-    LoadingSpinnerComponent,
     CommentsComponent
   ],
   imports: [
