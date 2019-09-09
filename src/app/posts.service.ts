@@ -31,8 +31,6 @@ export class PostsService {
   setAllData(allData: Posts[]) {
     this.allData = allData;
     this.commentSubject.next(this.fullData);
-    console.log(this.allData);
-    // console.log(this.allData);
   }
   createPost(): Observable<any> {
     return this.http.post(
@@ -42,11 +40,9 @@ export class PostsService {
   }
   getPosts(): Observable<any> {
     return this.http.get("https://newsfeed-6ee3e.firebaseio.com/posts.json");
-    // console.log(object);
   }
   setId(id:number):void {
     this.postId=id;
-    console.log(this.postId);
   }
   addComment(comment) {
     let postKey:string;
@@ -66,7 +62,6 @@ export class PostsService {
     for(let i = 0;i<cmnts1.length;i++){
       cmnts2.push(cmnts1[i].comment);
     }
-    console.log(cmnts2);
     return cmnts2;
   }
 }

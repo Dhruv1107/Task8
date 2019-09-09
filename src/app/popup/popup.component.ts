@@ -22,6 +22,5 @@ export class PopupComponent implements OnInit {
   }
   getPopUp(id: number): void {
     this.displayPopUp = this.postsService.allData.filter(post => post.id == id);
-    console.log(this.displayPopUp[0].id);
   }
 }

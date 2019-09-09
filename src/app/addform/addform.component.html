@@ -8,8 +8,9 @@
           id="{{field}}"
           placeholder="{{field}}"
           formControlName="{{field}}"
+          required
         />
     </div>
-    <input type="submit" value="Submit" class="submitBtn" />
+    <input type="submit" [disabled]="!profileForm.valid" value="Submit" class="submitBtn" />
   </form>
 </div>

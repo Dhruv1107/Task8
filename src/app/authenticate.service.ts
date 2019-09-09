@@ -52,7 +52,4 @@ export class AuthenticateService {
     return user !== null;
   }
 
-  addComment(comment: string): void {
-    console.log(comment);
-  }
 }
