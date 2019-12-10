@@ -1,0 +1,36 @@
+.main {
+  position: relative;
+  top: 8vw;
+}
+.form__select-box {
+  position: relative;
+  left: 2vw;
+  width: 12vw;
+  height: 5vh;
+  text-indent: 0.3rem;
+}
+.filterTextbox {
+  position: relative;
+  left: 25vw;
+  width: 13.5vw;
+  height: 5vh;
+  text-indent: 0.3rem;
+}
+.filterBtn {
+  position: relative;
+  left: 25vw;
+  background: #262626;
+  color: white;
+  height: 6vh;
+  width: 5vw;
+  border: 0;
+}
+.addBtn {
+  position: relative;
+  left: 50vw;
+  background: #262626;
+  color: white;
+  height: 6vh;
+  width: 7vw;
+  border: 0;
+}

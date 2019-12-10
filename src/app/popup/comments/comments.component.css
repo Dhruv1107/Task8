@@ -1,0 +1,10 @@
+.commentSubmit {
+  position: relative;
+  top: 3vh;
+  right: 12vw;
+}
+.displayComments {
+  position: relative;
+  left: 50vw;
+  top: 5vh;
+}

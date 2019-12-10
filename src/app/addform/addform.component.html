@@ -1,0 +1,16 @@
+<div class="form">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+
+    <div class="fields" *ngFor="let field of fields">
+        <label for="{{field}}" >News {{field}}</label>
+        <input
+          type="text"
+          id="{{field}}"
+          placeholder="{{field}}"
+          formControlName="{{field}}"
+          required
+        />
+    </div>
+    <input type="submit" [disabled]="!profileForm.valid" value="Submit" class="submitBtn" />
+  </form>
+</div>

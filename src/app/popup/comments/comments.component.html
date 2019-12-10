@@ -1,0 +1,9 @@
+<textarea rows="7" #comments> </textarea>
+<input
+  type="submit"
+  class="commentSubmit"
+  (click)="addComment(comments.value)"
+/>
+<div class="displayComments" *ngFor="let cmnt of cmnts">
+  {{ cmnt }}
+</div>
